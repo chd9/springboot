@@ -5,14 +5,14 @@
 
 
 #### 项目预览
-![Image text](/chd9/springboot/blob/master/springboot-layui/src/main/resources/static/images/yanshi1.jpg)
-![Image text](https://github.com/chd9/springboot/blob/master/springboot-layui/src/main/resources/static/images/yanshi2.jpg)
-![Image text](https://github.com/chd9/springboot/blob/master/springboot-layui/src/main/resources/static/images/yanshi3.jpg)
-![Image text](https://github.com/chd9/springboot/blob/master/springboot-layui/src/main/resources/static/images/yanshi4.jpg)
-![Image text](https://github.com/chd9/springboot/blob/master/springboot-layui/src/main/resources/static/images/yanshi5.jpg)
-![Image text](https://github.com/chd9/springboot/blob/master/springboot-layui/src/main/resources/static/images/yanshi6.jpg)
-![Image text](https://github.com/chd9/springboot/blob/master/springboot-layui/src/main/resources/static/images/yanshi7.jpg)
-![Image text](https://github.com/chd9/springboot/blob/master/springboot-layui/src/main/resources/static/images/yanshi8.jpg)
+![Image text](springboot-layui/src/main/resources/static/images/yanshi1.jpg)
+![Image text](springboot-layui/src/main/resources/static/images/yanshi2.jpg)
+![Image text](springboot-layui/src/main/resources/static/images/yanshi3.jpg)
+![Image text](springboot-layui/src/main/resources/static/images/yanshi4.jpg)
+![Image text](springboot-layui/src/main/resources/static/images/yanshi5.jpg)
+![Image text](springboot-layui/src/main/resources/static/images/yanshi6.jpg)
+![Image text](springboot-layui/src/main/resources/static/images/yanshi7.jpg)
+![Image text](springboot-layui/src/main/resources/static/images/yanshi8.jpg)
 
 
 #### 运行环境
