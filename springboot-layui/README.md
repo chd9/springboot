@@ -5,7 +5,7 @@
 
 
 #### 项目预览
-![Image text](https://github.com/chd9/springboot/blob/master/springboot-layui/src/main/resources/static/images/yanshi1.jpg)
+![Image text](https://gitee.com/uploads/images/2018/0403/114238_09c5b565_369962.png)
 ![Image text](https://github.com/chd9/springboot/blob/master/springboot-layui/src/main/resources/static/images/yanshi2.jpg)
 ![Image text](https://github.com/chd9/springboot/blob/master/springboot-layui/src/main/resources/static/images/yanshi3.jpg)
 ![Image text](https://github.com/chd9/springboot/blob/master/springboot-layui/src/main/resources/static/images/yanshi4.jpg)
