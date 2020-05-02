@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <div th:include="auth/css"></div>
+    <style>
+        .help-icon{
+            margin-left:10px;
+            margin-right: 10px;
+        }
+        .help-icon:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend><span>角色菜单设置</span></legend>
+</fieldset>
+
+<form class="layui-form" action="/Role/doMenuEdit" method="post">
+    <div class="layui-form-item">
+        <div class="layui-form-item">
+            <label class="layui-form-label">菜单选择</label>
+            <div class="layui-input-inline" th:each="allVo:${allVos}">
+                <input type="checkbox" name="menuId" th:value="${allVo.id}" th:title="${allVo.name}" lay-filter="menuCheckbox">
+            </div>
+        </div>
+    </div>
+    <input type="hidden" name="roleId" th:value="${roleId}">
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit="" lay-filter="form2">提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+
+</body>
+<div th:include="auth/js"></div>
+
+<script>
+    layui.use(['form','jquery'], function(){
+        var form = layui.form
+            ,$ = layui.$
+            ,layer = layui.layer;
+        init();
+        //监听提交
+        form.on('submit(form2)', function(data){
+            var menuIds="";
+            var checked = $("input[name='menuId']:checked");
+            for (var i = 0; i < checked.length; i++) {
+                if(menuIds==""){
+                    menuIds=checked[i].value;
+                }else{
+                    menuIds=menuIds+","+checked[i].value;
+                }
+            }
+            data.field.menuId=menuIds;
+            api.post("/Role/doMenuEdit",data.field);
+            return false;
+        });
+
+        function init(){
+            checkboxInit();
+        };
+        //动态选中事件
+        function checkboxInit(){
+            var id = $("input[name='roleId']").val();
+            var json = {"id":id};
+            api.ajxaPost("/Role/menuList",json,true,function (res) {
+                var data = res.data;
+                data.forEach(function(value,index,array){
+                    var checkbox = $("input[name='menuId']");
+                    var cardId =value.id;
+                    for (var i = 0; i < checkbox.length; i++) {
+                        if (checkbox[i].value == cardId) {
+                            checkbox[i].checked = true;
+                            break;
+                        }
+                    }
+                });
+                form.render('checkbox');
+            });
+        }
+    });
+
+</script>
+</html>

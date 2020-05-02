@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <div th:include="auth/css"></div>
+</head>
+<body>
+<fieldset class="layui-elem-field layui-field-title" >
+    <legend>密码规则</legend>
+</fieldset>
+<table  class="layui-table">
+    <tr>
+        <th>1</th>
+        <th>密码长度至少8位；密码含有数字&字母；</th>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>密码含有符号；</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>含有字母大小写。</td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.chd9.manage.mapper.UserMapper">
+
+    <select id="selectUserPage" resultType="com.chd9.manage.entity.User">
+        select a.* from t_user a order by a.id asc
+    </select>
+
+
+
+
+</mapper>

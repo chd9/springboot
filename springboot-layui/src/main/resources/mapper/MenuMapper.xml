@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.chd9.manage.mapper.MenuMapper">
+
+    <select id="selectMenuPage" resultType="com.chd9.manage.entity.Menu">
+        select a.* from t_menu a order by a.id asc
+    </select>
+    <select id="selectMenus" resultType="com.chd9.manage.entity.Menu">
+        select a.* from t_menu a where a.flag=1 order by a.id asc
+    </select>
+    <select id="selectMenusByUser" resultType="com.chd9.manage.entity.Menu">
+        select a.* from t_menu a left join t_role_menu b on a.id=b.menu_id where a.flag=1 and b.flag=1 and b.role_id=#{id} order by a.id asc
+    </select>
+
+
+
+</mapper>

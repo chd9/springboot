@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>layui简单后台管理系统</title>
+    <div th:include="auth/css" ></div>
+</head>
+<body>
+
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>layui简单后台管理系统</legend>
+    </fieldset>
+    <table  class="layui-table">
+        <tr>
+            <th>1</th>
+            <th>这是一个可以拿来即用的springboot快速项目；</th>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>集成了mybatis-plus和优秀的layui前端框架；</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>这个小实例集成了用户权限菜单管理模块，好看好用，易于二次开发。</td>
+        </tr>
+    </table>
+</body>
+<div th:include="auth/js"></div>
+
+
+<script>
+
+    layui.use(['table','form','code'], function(){
+        var table = layui.table,form = layui.form,code = layui.code;
+        layui.code()
+    });
+
+</script>
+</html>

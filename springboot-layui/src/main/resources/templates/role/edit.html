@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <div th:include="auth/css"></div>
+    <style>
+        .help-icon{
+            margin-left:10px;
+            margin-right: 10px;
+        }
+        .help-icon:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend><span th:switch="${vo}">编辑角色</span></legend>
+</fieldset>
+
+<form class="layui-form" action="/Role/doUpdate" method="post">
+    <div class="layui-form-item">
+        <div class="layui-form-item">
+            <label class="layui-form-label">角色名</label>
+            <div class="layui-input-inline">
+                <input type="text" name="username"  th:value="${vo?.role}" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">备注</label>
+            <div class="layui-input-inline">
+                <textarea name="remark" required lay-verify="required" class="layui-textarea" th:value="${vo?.remark}" th:text="${vo?.remark}" autocomplete="off"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">状态</label>
+            <div class="layui-input-block">
+                <input type="radio" name="flag" lay-verify="required" value="0" title="禁用" checked >
+                <input type="radio" name="flag" lay-verify="required" value="1" title="正常" th:checked="${vo?.flag eq 1}">
+            </div>
+        </div>
+    </div>
+    <input type="hidden" name="id" th:value="${vo?.id}">
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit="" lay-filter="form2">提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+
+</body>
+<div th:include="auth/js"></div>
+
+<script>
+    layui.use(['form'], function(){
+        var form = layui.form
+            ,layer = layui.layer;
+
+        //监听提交
+        form.on('submit(form2)', function(data){
+            api.post("/Role/doUpdate",data.field);
+            return false;
+        });
+    });
+
+</script>
+</html>
